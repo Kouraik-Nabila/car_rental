@@ -10,20 +10,21 @@
 <body>
     <header class="header">
         <div class="container">
-            <h1 class="logo">Admin Dashboard</h1>
+            <h1 class="logo">Car Rental Dashboard</h1>
             <nav class="navbar">
                 <ul class="nav-list">
-                    <li><a href="#vehicles">Manage Vehicles</a></li>
-                    <li><a href="#reservations">Manage Reservations</a></li>
-                    <li><a href="#stats">Statistics</a></li>
-                    <li><a href="#profile">Profile</a></li>
+                    <!-- Les liens seront affichés ou cachés selon le rôle -->
+                    <li><a href="#vehicles" id="vehiclesLink">Manage Vehicles</a></li>
+                    <li><a href="#reservations" id="reservationsLink">Manage Reservations</a></li>
+                    <li><a href="#stats" id="statsLink">Statistics</a></li>
+                    <li><a href="profile.html" id="profileLink">Profile</a></li>
                     <li><a href="logout.html">Logout</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="vehicles" class="vehicles">
+    <section id="vehicles" class="vehicles" style="display: none;">
         <div class="container">
             <h2>Manage Vehicles</h2>
             <button class="btn">Add Vehicle</button>
@@ -33,7 +34,7 @@
         </div>
     </section>
 
-    <section id="reservations" class="reservations">
+    <section id="reservations" class="reservations" style="display: none;">
         <div class="container">
             <h2>Manage Reservations</h2>
             <div class="reservations-list">
@@ -42,7 +43,7 @@
         </div>
     </section>
 
-    <section id="stats" class="stats">
+    <section id="stats" class="stats" style="display: none;">
         <div class="container">
             <h2>Statistics</h2>
             <p>Total Revenue: $10,000</p>
@@ -50,12 +51,12 @@
         </div>
     </section>
 
-    <section id="profile" class="profile">
+    <section id="profile" class="profile" style="display: none;">
         <div class="container">
             <h2>My Profile</h2>
             <div class="profile-card">
-                <p><strong>Name:</strong> Admin Name</p>
-                <p><strong>Email:</strong> admin@example.com</p>
+                <p><strong>Name:</strong> <span id="profileName">Admin Name</span></p>
+                <p><strong>Email:</strong> <span id="profileEmail">admin@example.com</span></p>
                 <button class="btn">Edit Profile</button>
             </div>
         </div>
@@ -66,6 +67,7 @@
             <p>&copy; 2025 Car Rental Service. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
-

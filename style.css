@@ -1,0 +1,164 @@
+/* Style général */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+}
+.navbar {
+    text-align: center;
+}
+.nav-list {
+    list-style-type: none;
+    padding: 0;
+}
+.nav-list li {
+    display: inline;
+    margin: 0 15px;
+}
+.nav-list li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+.nav-list li a:hover {
+    color: #f4a261;
+}
+
+/* Sections */
+section {
+    margin: 3rem 0;
+}
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+button.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button.btn:hover {
+    background-color: #45a049;
+}
+
+/* Grid layouts */
+.vehicles-grid, .reservations-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.vehicles-grid div, .reservations-list div {
+    background-color: white;
+    padding: 1rem;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(33% - 20px);
+    box-sizing: border-box;
+}
+
+.profile-card {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .vehicles-grid div, .reservations-list div {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .vehicles-grid div, .reservations-list div {
+        width: 100%;
+    }
+}
+
+/* Profil */
+.profile-container {
+    text-align: center;
+    padding: 2rem;
+}
+
+.profile-card {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin: 0 auto;
+}
+
+.profile-card p {
+    margin: 10px 0;
+}
+
+#editProfileBtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#editProfileBtn:hover {
+    background-color: #45a049;
+}
+
+/* Contact */
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.contact-container form input, 
+.contact-container form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.contact-container form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.contact-container form button:hover {
+    background-color: #45a049;
+}
+
