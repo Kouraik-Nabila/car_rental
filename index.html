@@ -3,65 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>Car Rental Service</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <h1 class="logo">Car Rental Dashboard</h1>
+            <h1 class="logo">Car Rental Service</h1>
             <nav class="navbar">
                 <ul class="nav-list">
-                    <!-- Les liens seront affichés ou cachés selon le rôle -->
-                    <li><a href="#vehicles" id="vehiclesLink">Manage Vehicles</a></li>
-                    <li><a href="#reservations" id="reservationsLink">Manage Reservations</a></li>
-                    <li><a href="#stats" id="statsLink">Statistics</a></li>
-                    <li><a href="profile.html" id="profileLink">Profile</a></li>
-                    <li><a href="logout.html">Logout</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="vehicles" class="vehicles" style="display: none;">
-        <div class="container">
-            <h2>Manage Vehicles</h2>
-            <button class="btn">Add Vehicle</button>
-            <div class="vehicles-grid">
-                <!-- Dynamic content for vehicles management will be added here -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h2>Welcome to the best Car Rental Service!</h2>
+                <p>Your next ride is just a click away. We offer top-quality vehicles for all your travel needs.</p>
+                <a href="register.html" class="btn">Start Renting Now</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="reservations" class="reservations" style="display: none;">
-        <div class="container">
-            <h2>Manage Reservations</h2>
-            <div class="reservations-list">
-                <!-- Dynamic content for reservation management will be added here -->
+        <!-- Available Cars Section -->
+        <section class="available-cars">
+            <div class="container">
+                <h2>Available Cars</h2>
+                <div class="cars-list">
+                    <!-- Car 1 -->
+                    <div class="car-card">
+                        <img src="car1.jpg" alt="Car 1" class="car-image">
+                        <h3>Luxury Sedan</h3>
+                        <p>$50/day</p>
+                        <button class="btn">Rent Now</button>
+                    </div>
+                    <!-- Car 2 -->
+                    <div class="car-card">
+                        <img src="car2.jpg" alt="Car 2" class="car-image">
+                        <h3>Sports Coupe</h3>
+                        <p>$75/day</p>
+                        <button class="btn">Rent Now</button>
+                    </div>
+                    <!-- Car 3 -->
+                    <div class="car-card">
+                        <img src="car3.jpg" alt="Car 3" class="car-image">
+                        <h3>Family SUV</h3>
+                        <p>$65/day</p>
+                        <button class="btn">Rent Now</button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="stats" class="stats" style="display: none;">
-        <div class="container">
-            <h2>Statistics</h2>
-            <p>Total Revenue: $10,000</p>
-            <p>Total Reservations: 120</p>
-        </div>
-    </section>
-
-    <section id="profile" class="profile" style="display: none;">
-        <div class="container">
-            <h2>My Profile</h2>
-            <div class="profile-card">
-                <p><strong>Name:</strong> <span id="profileName">Admin Name</span></p>
-                <p><strong>Email:</strong> <span id="profileEmail">admin@example.com</span></p>
-                <button class="btn">Edit Profile</button>
+        <!-- Customer Reviews Section -->
+        <section class="reviews">
+            <div class="container">
+                <h2>What Our Customers Are Saying</h2>
+                <div class="review-cards">
+                    <div class="review-card">
+                        <p>"Great service! The car was clean, and the booking process was quick and easy."</p>
+                        <p>- John D.</p>
+                    </div>
+                    <div class="review-card">
+                        <p>"I had a fantastic experience. Will definitely rent from here again!"</p>
+                        <p>- Sarah P.</p>
+                    </div>
+                    <div class="review-card">
+                        <p>"Affordable prices and friendly staff. Highly recommended!"</p>
+                        <p>- David L.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <!-- Why Choose Us Section -->
+        <section class="why-choose-us">
+            <div class="container">
+                <h2>Why Choose Us?</h2>
+                <ul>
+                    <li>Wide variety of vehicles to choose from</li>
+                    <li>Competitive and affordable pricing</li>
+                    <li>Easy online booking and 24/7 customer support</li>
+                    <li>Flexible rental options: daily, weekly, and monthly</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 Car Rental Service. All Rights Reserved.</p>

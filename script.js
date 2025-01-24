@@ -1,61 +1,51 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Vérifier le rôle de l'utilisateur après connexion
-    const userRole = sessionStorage.getItem('userRole');  // Assurer qu'on récupère bien le rôle de l'utilisateur après la connexion
-    const userName = sessionStorage.getItem('userName');
-    const userEmail = sessionStorage.getItem('userEmail');
+// script.js
 
-    // Si aucun rôle n'est défini, rediriger vers la page de login
+// Fonction pour initialiser la session de l'utilisateur
+function initializeSession(userRole) {
+    // Enregistre le rôle de l'utilisateur dans le localStorage
+    localStorage.setItem('userRole', userRole);
+}
+
+// Fonction pour récupérer le rôle de l'utilisateur depuis la session
+function getUserRole() {
+    return localStorage.getItem('userRole');
+}
+
+// Fonction pour rediriger l'utilisateur vers son tableau de bord en fonction de son rôle
+function redirectToDashboard() {
+    const userRole = getUserRole();
+
     if (!userRole) {
-        window.location.href = "login.html";  // Rediriger vers la page de connexion
+        window.location.href = "login.html";  // Redirection vers la page de login si l'utilisateur n'est pas connecté
         return;
     }
 
-    // Afficher le nom et email dans la section "Profile"
-    document.getElementById('profileName').textContent = userName;
-    document.getElementById('profileEmail').textContent = userEmail;
-
-    // Afficher les sections en fonction du rôle
-    if (userRole === 'admin') {
-        displayAdminDashboard();
-    } else if (userRole === 'agent') {
-        displayAgentDashboard();
-    } else if (userRole === 'client') {
-        displayClientDashboard();
+    switch (userRole) {
+        case 'client':
+            window.location.href = "client-dashboard.html";  // Dashboard Client
+            break;
+        case 'agent':
+            window.location.href = "agent-dashboard.html";  // Dashboard Agent
+            break;
+        case 'admin':
+            window.location.href = "admin-dashboard.html";  // Dashboard Admin
+            break;
+        default:
+            window.location.href = "login.html";  // Redirection par défaut vers login
+            break;
     }
+}
+
+// Fonction pour déconnecter l'utilisateur
+function logout() {
+    localStorage.removeItem('userRole');  // Suppression de la session
+    window.location.href = "login.html";  // Redirection vers la page de login
+}
+
+// Appel de la fonction pour rediriger vers le dashboard approprié si l'utilisateur est connecté
+document.addEventListener("DOMContentLoaded", function () {
+    if (window.location.pathname === "/login.html") {
+        return;
+    }
+    redirectToDashboard();  // Redirige vers le tableau de bord approprié à la connexion
 });
-
-// Fonction pour afficher le dashboard Admin
-function displayAdminDashboard() {
-    // Affichage des sections pour l'Admin
-    document.getElementById('vehicles').style.display = 'block';
-    document.getElementById('reservations').style.display = 'block';
-    document.getElementById('stats').style.display = 'block';
-    document.getElementById('profile').style.display = 'block';
-    document.getElementById('vehiclesLink').style.display = 'inline';
-    document.getElementById('reservationsLink').style.display = 'inline';
-    document.getElementById('statsLink').style.display = 'inline';
-}
-
-// Fonction pour afficher le dashboard Agent
-function displayAgentDashboard() {
-    // Affichage des sections pour l'Agent
-    document.getElementById('vehicles').style.display = 'none';
-    document.getElementById('reservations').style.display = 'block';
-    document.getElementById('stats').style.display = 'none';
-    document.getElementById('profile').style.display = 'block';
-    document.getElementById('vehiclesLink').style.display = 'none';
-    document.getElementById('reservationsLink').style.display = 'inline';
-    document.getElementById('statsLink').style.display = 'none';
-}
-
-// Fonction pour afficher le dashboard Client
-function displayClientDashboard() {
-    // Affichage des sections pour le Client
-    document.getElementById('vehicles').style.display = 'block';
-    document.getElementById('reservations').style.display = 'none';
-    document.getElementById('stats').style.display = 'none';
-    document.getElementById('profile').style.display = 'block';
-    document.getElementById('vehiclesLink').style.display = 'inline';
-    document.getElementById('reservationsLink').style.display = 'none';
-    document.getElementById('statsLink').style.display = 'none';
-}

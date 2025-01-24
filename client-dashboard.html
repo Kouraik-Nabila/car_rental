@@ -4,34 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Client Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Client Dashboard</h1>
-        <nav>
-            <ul>
-                <li><a href="#vehicles">View Vehicles</a></li>
-                <li><a href="#profile">My Profile</a></li>
-            </ul>
-        </nav>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Client Dashboard</h1>
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li><a href="#vehicles">Available Vehicles</a></li>
+                    <li><a href="#reservations">My Reservations</a></li>
+                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section id="vehicles">
-        <h2>Available Vehicles</h2>
-        <!-- Vehicles content dynamically loaded from the database -->
-    </section>
+    <main>
+        <section id="vehicles" class="vehicles">
+            <h2>Available Vehicles</h2>
+            <div class="vehicles-grid">
+                <!-- Dynamic content for vehicles will go here -->
+            </div>
+        </section>
 
-    <section id="profile">
-        <h2>My Profile</h2>
-        <p>Name: <span id="clientName"></span></p>
-        <p>Email: <span id="clientEmail"></span></p>
-    </section>
+        <section id="reservations" class="reservations">
+            <h2>My Reservations</h2>
+            <div class="reservations-list">
+                <!-- Reservations for the client will be displayed here -->
+            </div>
+        </section>
 
-    <footer>
-        <p>&copy; 2025 Car Rental Service</p>
+        <section id="profile" class="profile">
+            <h2>My Profile</h2>
+            <p><strong>Name:</strong> Client Name</p>
+            <p><strong>Email:</strong> client@example.com</p>
+            <button class="btn">Edit Profile</button>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Car Rental Service. All Rights Reserved.</p>
+        </div>
     </footer>
 
-    <script src="client-dashboard.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
